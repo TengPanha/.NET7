@@ -44,8 +44,7 @@ namespace POS_API.Services
 
         public IEnumerable<Inventory> GetAll()
         {
-            var inventories=_context.Inventories.Where(x=>x.IsActive.Equals(true)).ToList();
-            return inventories;
+            return _context.Inventories.Where(s => s.IsActive.Equals(true)); 
         }
 
         public Inventory GetById(int id)

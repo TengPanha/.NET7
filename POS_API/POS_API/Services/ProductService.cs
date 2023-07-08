@@ -34,7 +34,7 @@ namespace POS_API.Services
             if (model is null)
                 throw new AppException("category is empty or null");
 
-            // map model to new user object
+            // map model to new product object
             var product = _mapper.Map<Product>(model);
             var response = new ProductReponse
             {
@@ -48,7 +48,7 @@ namespace POS_API.Services
                 Category = _mapper.Map<CategoryRequest>(_context.Categories.FirstOrDefault(c=>c.IsActive.Equals(true) && c.Id.Equals(product.CategoryId))),
                 Supplier=_mapper.Map<SupplierRequest>(_context.Suppliers.FirstOrDefault(s => s.IsActive.Equals(true) && s.Id.Equals(product.SupplierId)))
             };
-            // save user
+            // save product
             _context.Products.Add(product);
             _context.SaveChanges();
             return response;
