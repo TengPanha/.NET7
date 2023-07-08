@@ -31,6 +31,11 @@ namespace POS_API
             // configure DI for application services
             builder.Services.AddScoped<IJwtUtils, JwtUtils>();
             builder.Services.AddScoped<IUserService, UserService>();
+            builder.Services.AddScoped<ICategoryService, CategoryService>();
+            builder.Services.AddScoped<ICustomerService, CustomerService>();
+            builder.Services.AddScoped<ISuppliersService, SupplierService>();
+            builder.Services.AddScoped<IProductService, ProductService>();
+            builder.Services.AddScoped<IInventoryService,InventoryService>();
             builder.Services.AddSwaggerGen(option =>
             {
                 option.SwaggerDoc("v1", new OpenApiInfo { Title = "POS SERVER", Version = "v1" });

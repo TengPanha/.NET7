@@ -3,6 +3,5 @@
     public class Category:NoteBaseModel
     {
         public string Name { get; set; } 
-
     }
 }
