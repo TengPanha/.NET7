@@ -49,7 +49,7 @@ public class UserService : IUserService
 
     public IEnumerable<User> GetAll()
     {
-        return _context.Users;
+        return _context.Users.Where(x=>x.IsActive.Equals(true));
     }
 
     public User GetById(int id)
@@ -103,7 +103,7 @@ public class UserService : IUserService
 
     private User getUser(int id)
     {
-        var user = _context.Users.Find(id);
+        var user = _context.Users.FirstOrDefault(x=>x.IsActive.Equals(true) && x.Id.Equals(id));
         if (user == null) throw new KeyNotFoundException("User not found");
         return user;
     }

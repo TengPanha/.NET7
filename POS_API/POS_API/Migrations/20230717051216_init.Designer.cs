@@ -12,8 +12,8 @@ using POS_API.Helpers;
 namespace POS_API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230701160026_initdbv1")]
-    partial class initdbv1
+    [Migration("20230717051216_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

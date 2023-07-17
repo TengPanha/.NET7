@@ -15,4 +15,6 @@ public class RegisterRequest
 
     [Required]
     public string Password { get; set; }
+    [Required]
+    public bool IsActive {get;set;}
 }
